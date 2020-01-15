@@ -1,8 +1,10 @@
 package Utilities;
 import com.relevantcodes.extentreports.ExtentReports;
+
 /**
  *Extent Report Path
  */
+
 public class ExtentFactory {
 	public static ExtentReports getInstance(){
 		ExtentReports extent;
@@ -10,5 +12,4 @@ public class ExtentFactory {
 		extent = new ExtentReports(path,false);
 		return extent;
 	}
-
 }
