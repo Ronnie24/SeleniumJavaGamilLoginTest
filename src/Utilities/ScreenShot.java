@@ -13,7 +13,8 @@ import org.openqa.selenium.WebDriver;
 public class ScreenShot {
 	public static String takeScreenShot(WebDriver driver, String fileName) throws IOException{
 		fileName = fileName+".png";
-		String dir = "E:\\EW\\TestGmailLogin\\ScreenShot\\";
+		//set screenshot path 
+		String dir = "......\\ScreenShot\\";
 		File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(sourceFile, new File(dir+fileName));
 		String destination = dir + fileName;
