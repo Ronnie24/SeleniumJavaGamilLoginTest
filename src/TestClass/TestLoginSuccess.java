@@ -19,6 +19,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 
+/**
+ * Enter correct username, password
+ * Upload attachment and send
+ */
+
 public class TestLoginSuccess {
 	private WebDriver driver;
 	ExtentReports report;
