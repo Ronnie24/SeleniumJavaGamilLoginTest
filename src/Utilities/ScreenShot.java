@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 /**
  * Screenshot path
  */
+
 public class ScreenShot {
 	public static String takeScreenShot(WebDriver driver, String fileName) throws IOException{
 		fileName = fileName+".png";
@@ -16,8 +17,6 @@ public class ScreenShot {
 		File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(sourceFile, new File(dir+fileName));
 		String destination = dir + fileName;
-		return destination;
-		
+		return destination;	
 	}
-
 }
