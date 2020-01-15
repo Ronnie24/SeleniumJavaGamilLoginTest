@@ -1,21 +1,15 @@
 package TestClass;
-
 import org.testng.annotations.Test;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
 import Utilities.Contanst;
 import Utilities.EmailPage;
 import Utilities.ExtentFactory;
 import Utilities.UsernameAndPassword;
-
 import org.testng.annotations.BeforeMethod;
-
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
