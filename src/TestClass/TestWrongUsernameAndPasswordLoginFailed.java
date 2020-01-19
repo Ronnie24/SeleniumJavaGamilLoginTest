@@ -28,7 +28,7 @@ public class TestWrongUsernameAndPasswordLoginFailed {
 	ExtentTest test;
 
   @Test
-  public void f() throws InterruptedException {
+  public void EnterUserNameAndPassword() throws InterruptedException {
 		//Enter Username
 		EmailPage.enterUsername(driver,"test");
 		test.log(LogStatus.INFO, "Enter username...");
@@ -42,9 +42,37 @@ public class TestWrongUsernameAndPasswordLoginFailed {
 			Assert.assertTrue(true);
 			test.log(LogStatus.INFO, "login successfully");
 		}else{
-			//test.log(LogStatus.FAIL,"login failed");
+			test.log(LogStatus.FAIL,"login failed");
 		 }
   }
+	
+@Test(dependsOnMethods = {"EnterUserNameAndPassword"})
+public void UploadAttachmentAndSend(){
+		//New letter
+		EmailPage.clickNewLetter(driver);
+		test.log(LogStatus.INFO, "Click New Letter button");
+		Thread.sleep(3000);
+		//Enter email address
+		EmailPage.enterEmailAddress(driver,"Ronnie-wai@hotmail.com");
+		test.log(LogStatus.INFO, "Enter email address");
+		//Click upload attachment button and upload attachment with AutiIt tool
+		EmailPage.uploadAttachment(driver);
+		Thread.sleep(2000);
+		Runtime.getRuntime().exec("E:\\EW\\TestGmailLogin\\script\\fileUpload.exe");
+		test.log(LogStatus.INFO, "Upload attachment");
+		Thread.sleep(2000);
+		//Click send email button
+		EmailPage.sendEmail(driver);
+		Thread.sleep(3000);	
+		//Check is email send successfully
+		boolean isEmailSent = EmailPage.isEamilSent(driver);
+		if( isEmailSent == true){
+			Assert.assertTrue(true);
+			test.log(LogStatus.PASS, "Email sent successfully");
+		}else{
+			test.log(LogStatus.FAIL,"Email sent failed");
+		 }
+}
   
   @BeforeMethod
   public void beforeMethod() {
