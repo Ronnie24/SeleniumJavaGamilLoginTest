@@ -93,6 +93,7 @@ public class TestLoginSuccess {
 	public void afterMethod() throws InterruptedException {
 		Thread.sleep(2000);
 		driver.quit();
+		
 		report.endTest(test);
 		report.flush();
 	}
